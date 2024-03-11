@@ -55,7 +55,11 @@ const EbiFooter = () => {
                 <section id="ebi-footer-meta" className="ebi-footer-meta row">
                     <div className="columns">
                         <p className="address">EMBL-EBI, Wellcome Genome Campus, Hinxton, Cambridgeshire, CB10 1SD, UK. +44 (0)1223 49 44 44</p>
-                        <p className="legal">Copyright © EMBL-EBI 2017 | EMBL-EBI is part of the European Molecular Biology Laboratory | <a href="//www.ebi.ac.uk/about/terms-of-use">Terms of use</a><a className="readmore float-right" href="http://intranet.ebi.ac.uk">Intranet</a></p>
+                        <p className="legal">Copyright © EMBL-EBI 2017 | EMBL-EBI is part of the European Molecular Biology Laboratory | <a href="//www.ebi.ac.uk/about/terms-of-use">Terms of use</a>
+                            <a className="readmore float-right" href="http://intranet.ebi.ac.uk">
+                            <span className="icon icon-functional" data-icon="L"></span> Intranet for staff
+                            </a>
+                        </p>
                     </div>
                 </section>
             </div>
