@@ -11,7 +11,7 @@ const EbiNavbar = () => {
     return (
         <header id="masthead-black-bar" className={`clearfix masthead-black-bar ${isNavbarExpanded ? 'active' : ''}`}>
             <div>
-                <nav id="embl-bar" className="embl-bar global-masthead-interactive-banner">
+                <nav id="embl-bar" className={`embl-bar global-masthead-interactive-banner ${isNavbarExpanded ? 'active' : ''}`}>
                     <div className="row padding-bottom-medium">
                         <div className="columns padding-top-medium">
                             <button className="close-button" aria-label="Close alert" type="button" onClick={toggleNavbar}>
@@ -22,7 +22,7 @@ const EbiNavbar = () => {
                             <div className="large-10 medium-12">
                                 <div className="margin-bottom-large padding-top-xsmall margin-top-large">
                                     <h3 className="no-underline inline">
-                                        <a href="//embl.org">EMBL</a>
+                                        <a href="//embl.org">EMBL </a>
                                     </h3>
                                     was set up in 1974 as Europe’s flagship laboratory for the life sciences – an intergovernmental organisation with more than 80 independent research groups covering the spectrum of molecular biology:
                                 </div>
@@ -163,6 +163,6 @@ const EbiNavbar = () => {
             </div>
         </header>
     );
-}
+};
 
 export default EbiNavbar;
