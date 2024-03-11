@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './EbiNavbar.css'; // assuming you have converted the SCSS to CSS
 
 const EbiNavbar = () => {
+    const [isNavbarExpanded, setIsNavbarExpanded] = useState(false);
+
+    const toggleNavbar = () => {
+        setIsNavbarExpanded(!isNavbarExpanded);
+    };
+
     return (
-        <header id="masthead-black-bar" className="clearfix masthead-black-bar">
+        <header id="masthead-black-bar" className={`clearfix masthead-black-bar ${isNavbarExpanded ? 'active' : ''}`}>
             <div>
                 <nav id="embl-bar" className="embl-bar global-masthead-interactive-banner">
                     <div className="row padding-bottom-medium">
                         <div className="columns padding-top-medium">
-                            <button className="close-button" aria-label="Close alert" type="button">
+                            <button className="close-button" aria-label="Close alert" type="button" onClick={toggleNavbar}>
                                 <span aria-hidden="true">×</span>
                             </button>
                         </div>
@@ -106,7 +112,7 @@ const EbiNavbar = () => {
                 <nav id="search-bar" className="search-bar global-masthead-interactive-banner">
                     <div className="row padding-bottom-medium">
                         <div className="columns padding-top-medium">
-                            <button className="close-button" aria-label="Close alert" type="button">
+                            <button className="close-button" aria-label="Close alert" type="button" onClick={toggleNavbar}>
                                 <span aria-hidden="true">×</span>
                             </button>
                         </div>
@@ -137,8 +143,16 @@ const EbiNavbar = () => {
                         <li className="where grenoble hide"><a href="#">Heidelberg</a></li>
                         <li className="where grenoble hide"><a href="#">Grenoble</a></li>
                         <li className="where rome hide"><a href="#">Rome</a></li>
-                        <li id="embl-selector" className="float-right show-for-medium embl-selector embl-ebi"><button className="button float-right">&nbsp;</button></li>
-                        <li className="float-right search"><a href="#" className="inline-block collpased float-left search-toggle"><span className="show-for-small-only">Search</span></a></li>
+                        <li id="embl-selector" className="float-right show-for-medium embl-selector embl-ebi">
+                            <button className="button float-right" onClick={toggleNavbar}>
+                                &nbsp;
+                            </button>
+                        </li>
+                        <li className="float-right search">
+                            <a href="#" className="inline-block collpased float-left search-toggle">
+                                <span className="show-for-small-only">Search</span>
+                            </a>
+                        </li>
                         <li className="what about"><a href="https://www.ebi.ac.uk/about">About us</a></li>
                         <li className="what training"><a href="https://www.ebi.ac.uk/training">Training</a></li>
                         <li className="what research"><a href="https://www.ebi.ac.uk/research">Research</a></li>
